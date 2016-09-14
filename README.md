@@ -17,7 +17,7 @@ En la carpeta 'Parte1' se tiene una aplicación multi-hilo que busca paralelizar
 En general, la funcionalidad es la siguiente:
 
 * El hilo DataSourceStream extrae contínuamente los datos provistos a través de la clase DataSource (importado como librería externa), y los encola en una cola concurrente.
-* Cada hilo DataStreamProcesor consulta el siguiente elemento disponible en dicha cola, lo 'procesa' (por ahora simplemente muestra su valor por STDOUT), e incrementa un contador común (usado para mostrar, posteriormente, el número de datos procesados).
+* Se tienen varios hilos DataStreamProcesor, donde cada uno consulta el siguiente elemento disponible en dicha cola, lo 'procesa' (por ahora simplemente muestra su valor por STDOUT), e incrementa un contador común (usado para mostrar, posteriormente, el número de datos procesados).
 
 Al correr la aplicación:
 
