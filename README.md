@@ -1,10 +1,9 @@
+### Escuela Colombiana de Ingeniería
+#### Arquitecturas de Software
+#### Parcial - Tercio 1.
 
-###Escuela Colombiana de Ingeniería
-####Arquitecturas de Software
-####Parcial - Tercio 1.
 
-
-##Parte 1
+## Parte 1
 
 En la carpeta 'Parte1' se tiene una aplicación multi-hilo que busca paralelizar el procesamiento de un flujo de datos provisto por una fuente externa. En este caso, la fuente de datos es -esporádicamente- bastante lenta en la transmisión de los datos (puede pausarse incluso algunos segundos).
 
@@ -21,7 +20,7 @@ Teniendo en cuenta lo anterior:
 2. En el archivo de respuestas indique: hay condiciones de carrera en lo planteado?. En qué clase y en qué líneas de código está la región crítica?.
 3. Haga los ajustes necesarios para que ya no se den las condiciones de carrera.
 
-##Parte 2
+## Parte 2
 
 El siguiente es el modelo de clases de la herramienta de procesamiento de datos (cuyos fuentes están en la carpeta 'Parte2'), que depende principalmente de un componente llamado DataProcessor. Esta herramienta básicamente (a través del DataProcessor) carga datos mediante un DataLoader, y luego los ordena a través de un Sorter. Como se observa, por ahora hay dos mecanismos diferentes para cargar datos y dos mecanismos diferentes para ordenarlos. Igualmente, se puede observar que este modelo no cumple con el principio DiP (Dependency Inversion Principle).
 
@@ -40,6 +39,6 @@ El siguiente es el modelo de clases de la herramienta de procesamiento de datos 
 
 3. De acuerdo con lo hecho en el punto 2, describa en la hoja de respuestas los siguientes elementos del aspecto desarrollado:
 
-	Pointcut:	
-	Advice:
-	Número de posibles joinpoints:
+    * Pointcut:	
+	* Advice:
+	* Número de posibles joinpoints:
