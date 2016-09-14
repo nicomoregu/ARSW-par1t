@@ -1,9 +1,11 @@
+
 ###Escuela Colombiana de Ingeniería
 ####Arquitecturas de Software
 ####Parcial - Tercio 1.
 
 
 ##Parte 1
+
 En la carpeta 'Parte1' se tiene una aplicación multi-hilo que busca paralelizar el procesamiento de un flujo de datos provisto por una fuente externa. En este caso, la fuente de datos es -esporádicamente- bastante lenta en la transmisión de los datos (puede pausarse incluso algunos segundos).
 
 En general, la funcionalidad es la siguiente:
