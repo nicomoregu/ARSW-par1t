@@ -29,7 +29,7 @@ Se puede observar que la misma usa de forma muy intensiva el procesador, dado qu
 	
 Teniendo en cuenta lo anterior:
 	
-1. Haga los ajustes necesarios para que la aplicación no use innecesariamente los recursos de CPU mientras la cola no tenga elementos (es decir, que los hilos DataStreamProcesor se suspendan mientras no haya datos en la cola). Esta solución debe igual garantizar que, en cuanto haya datos disponibles, éstos empiecen a ser procesados inmediatamente.
+1. Haga los ajustes necesarios para que la aplicación no use innecesariamente los recursos de CPU mientras la cola no tenga elementos (es decir, que los hilos DataStreamProcesor se suspendan mientras no haya datos en la cola, y se reactiven en cuanto de nuevo haya datos). Esta solución debe igual garantizar que, en cuanto haya datos disponibles, éstos empiecen a ser procesados inmediatamente.
 2. En el archivo de respuestas indique: hay condiciones de carrera en lo planteado?. En qué clase y en qué líneas de código está la región crítica?.
 3. Haga los ajustes necesarios para que ya no se de(n) la(s) condicion(es) de carrera.
 
