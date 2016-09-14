@@ -3,7 +3,11 @@
 #### Parcial - Tercio 1.
 
 
-Para este ejercicio, clone este repositorio (git clone). Si lo descarga, se perderá el repositorio GIT de base, el cual es requerido para la entrega. Las respuestas a las preguntas abiertas deben escribirse en el archivo RESPUESTAS.txt, incluido en este repositorio.
+Para este ejercicio, clone este repositorio:
+
+git clone https://gitlab.com/ARSW-ECI/2016-2-Par1T.git
+
+Si lo descarga, se perderá el repositorio GIT de base, el cual es requerido para la entrega. Las respuestas a las preguntas abiertas deben escribirse en el archivo RESPUESTAS.txt, incluido en este repositorio.
 
 
 ## Parte 1
