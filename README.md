@@ -50,7 +50,7 @@ El siguiente es el modelo de clases de la herramienta de procesamiento de datos 
 
 3. De acuerdo con lo hecho en el punto 2, describa en la hoja de respuestas los siguientes elementos del aspecto desarrollado:
 
-   * Pointcut:	
+	* Pointcut:	
 	* Advice:
 	* Número de posibles joinpoints:
 
