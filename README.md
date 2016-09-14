@@ -3,6 +3,9 @@
 #### Parcial - Tercio 1.
 
 
+Para este ejercicio, clone este repositorio (git clone). Si lo descarga, se perderá el repositorio GIT de base, el cual es requerido para la entrega. Las respuestas a las preguntas abiertas deben escribirse en el archivo RESPUESTAS.txt, incluido en este repositorio.
+
+
 ## Parte 1
 
 En la carpeta 'Parte1' se tiene una aplicación multi-hilo que busca paralelizar el procesamiento de un flujo de datos provisto por una fuente externa. En este caso, la fuente de datos es -esporádicamente- bastante lenta en la transmisión de los datos (puede pausarse incluso algunos segundos).
@@ -29,16 +32,47 @@ El siguiente es el modelo de clases de la herramienta de procesamiento de datos 
 
 1. Ajuste el código entregado para que el programa cumpla con el principio Abierto/Cerrado, en cuanto a que se le puedan cambiar las estrategias de carga y ordenamiento SIN modificar el código central. En este caso, se espera que dicha configuración se pueda realizar desde un archivo de configuración de Spring.
 
-2. Al código existente agregue un aspecto que, de forma no invasiva, mida el tiempo de ejecución del cargador de datos y del componente de ordenamiento que se hayan inyectado en el momento de la ejecución. Una vez el aspecto tenga los datos, éste debe imprimir por pantalla:
+2. Al código existente agregue un aspecto que, de forma no invasiva, mida el tiempo de ejecución del cargador de datos y del componente de ordenamiento que se hayan inyectado en el momento de la ejecución. 
+
+	Una vez el aspecto tenga los datos, éste debe imprimir por pantalla:
 
 	Nombre del componente de carga: _____ Tiempo: _____ ms
 	Nombre del componente de ordenamiento: ____ Tiempo: _____ ms
 	
 	Donde 'nombre' el lo obtenido con el método 'getNombre' de dichos componentes.
+	
+	(Nota: La lógica de (o los) aspecto(s) desarrollados deben quedar en la clase edu.eci.arsw.par1t.aspects.AspectsHandler)
 
 
 3. De acuerdo con lo hecho en el punto 2, describa en la hoja de respuestas los siguientes elementos del aspecto desarrollado:
 
-    * Pointcut:	
+   * Pointcut:	
 	* Advice:
 	* Número de posibles joinpoints:
+
+## Entrega
+
+Siga al pie de la letra estas indicaciones para la entrega del examen.
+
+1. Configure su usuario de GIT
+
+	```bash
+$ git config --global user.name "Juan Perez"
+$ git config --global user.email juan.perez@escuelaing.edu.co
+```
+
+2. Desde el directorio raíz (donde está este archivo README.md), haga commit de lo realizado.
+
+	```bash
+$ git add .
+$ git commit -m "entrega proyecto - Juan Perez"
+```
+
+3. Desde este mismo directorio, comprima todo con:
+
+	```bash
+$ zip * -r APELLIDO.NOMBRE.zip .
+```
+
+4. Suba el archivo antes creado (APELLIDO.NOMBRE.zip) en el espacio de moodle correspondiente.
+5. IMPORTANTE!. Conserve una copia de la carpeta y del archivo .ZIP.
