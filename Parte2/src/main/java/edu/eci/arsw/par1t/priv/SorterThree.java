@@ -1,46 +1,48 @@
 package edu.eci.arsw.par1t.priv;
 
 import edu.eci.arsw.par1t.Sorter;
+import edu.eci.arsw.par1t.aspects.MyAnnotation;
 
 public class SorterThree implements Sorter {
 	
 	
-	@Override
-	public void sort(int[] data) {
-		misterySort(data);		
-	}
+    @Override
+    @MyAnnotation (nombre="SorterThree")
+    public void sort(int[] data) {
+            misterySort(data);		
+    }
 
-	
-	private  static void misterySort(int[] array) 
-	{
-		/** code to create a new array that is pretty much the same but whose size is increased by 1 to accommodate 0 element */ 
-		int[] tempArray = new int[array.length + 1];
-		for (int i = 0; i < array.length; i++)
-			tempArray[i + 1] = array[i];
-		/***/
-				
-		int N = tempArray.length - 1;
 
-		// take array elements and construct a heap
-	    for (int k = N / 2; k >= 1; k--)
-	    	sink(tempArray, k, N);	
-		
-		// sort heap by swapping the root with each index
-	    while (N > 1)
-	    {
-	        swap(tempArray, 1, N--);
-	        sink(tempArray, 1, N);
-	    }
-	    
-	    // copy sorted array back into original array (tempArray has that extra '0' element)
-	    for (int i = 0; i < array.length; i++)
-	    	array[i] = tempArray[i + 1];
-	}
+    private  static void misterySort(int[] array) 
+    {
+        /** code to create a new array that is pretty much the same but whose size is increased by 1 to accommodate 0 element */ 
+        int[] tempArray = new int[array.length + 1];
+        for (int i = 0; i < array.length; i++)
+                tempArray[i + 1] = array[i];
+        /***/
+
+        int N = tempArray.length - 1;
+
+        // take array elements and construct a heap
+        for (int k = N / 2; k >= 1; k--)
+            sink(tempArray, k, N);	
+
+            // sort heap by swapping the root with each index
+        while (N > 1)
+        {
+            swap(tempArray, 1, N--);
+            sink(tempArray, 1, N);
+        }
+
+        // copy sorted array back into original array (tempArray has that extra '0' element)
+        for (int i = 0; i < array.length; i++)
+            array[i] = tempArray[i + 1];
+    }
 
     private static void sink(int[] array, int k, int N) 
     {
         while (2 * k <= N) {	                    
-        	int j = 2 * k;							
+                int j = 2 * k;							
             if (j < N && (array[j] < array[j + 1])) j++;
             if (array[k] > array[j]) break;				
             swap(array, k, j);							
@@ -48,11 +50,11 @@ public class SorterThree implements Sorter {
        } 
     }	
 
-	private static void swap(int[] array, int i, int j) {
-		int temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
+    private static void swap(int[] array, int i, int j) {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+    }
 
     @Override
     public String getName() {

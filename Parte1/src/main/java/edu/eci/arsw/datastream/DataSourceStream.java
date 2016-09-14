@@ -28,23 +28,36 @@ import java.util.logging.Logger;
  */
 public class DataSourceStream extends Thread{
     
+    private Bandera band;
+    
     private ConcurrentLinkedQueue<Integer> queue;
     
     Random r=new Random(System.currentTimeMillis());
 
-    public DataSourceStream() {
+    public DataSourceStream(Bandera band) {
         this.queue = new ConcurrentLinkedQueue<>();
+        this.band = band;
     }
 
     public void run() {
         while (true) {
             queue.add(DataSource.getInstance().getNextEntry());
+            band.setBand(true);
+            synchronized(band){
+                band.notifyAll();
+            }
             System.out.println("Buffer size:" + queue.size());
         }
     }
     
-    public Integer getData(){        
+    public Integer getData(){
+        if(queue.size()<=1){
+            band.setBand(false);
+        }
         return queue.poll();
     }
     
+    public Integer getQueueSize(){
+        return queue.size();
+    }
 }

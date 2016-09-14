@@ -16,20 +16,22 @@
  */
 package edu.eci.arsw.datastream;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  *
  * @author hcadavid
  */
 public class ProcessStatistics {
    
-    private static int dataCount=0;
+    private static AtomicInteger dataCount=  new AtomicInteger(0);
     
     public void incrementCount(){
-        dataCount=dataCount+1;
+        dataCount=new AtomicInteger(dataCount.addAndGet(1));
     }
 
     public static int getDataCount() {
-        return dataCount;
+        return dataCount.get();
     }
     
     

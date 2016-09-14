@@ -1,13 +1,15 @@
 package edu.eci.arsw.par1t;
 
 import edu.eci.arsw.par1t.priv.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		DataProcessor dp=new DataProcessor();
+		ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
+		DataProcessor dp=ac.getBean(DataProcessor.class);
 		int[] res=dp.processData();
 		
 		Logger.log("Data processing done. Printing data sample...");

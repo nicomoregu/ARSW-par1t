@@ -1,15 +1,19 @@
 
 Punto 1.
 
-	2.
+	2. Si se encuentran condicciones de carrera, la region critica se
+	encuentra en la clase de ProcessStatistics,mas precisamente en la linea
+	28, donde se quiere incrementar el dataCount. 
 
 
 Punto 2. 
 
     3.
         
-        Pointcut:
+        Pointcut: MyAnnotation, @annotation(edu.eci.arsw.par1t.aspects.MyAnnotation)
         
-        Advice:
+        Advice: Around
         
-        Número de posibles joinpoints:
+        Número de posibles joinpoints: se prentan 4, uno por cada uno de los
+	DataLoader y por cada Sorter que se encuentre.
+

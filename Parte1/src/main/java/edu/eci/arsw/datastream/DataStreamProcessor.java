@@ -27,12 +27,14 @@ import java.util.logging.Logger;
 public class DataStreamProcessor extends Thread{
     private DataSourceStream dss;
     private ProcessStatistics ps=new ProcessStatistics();
+    private static Bandera band;
     
     private boolean abortRequested=false;
     
-    public DataStreamProcessor(String name,DataSourceStream dss) {
+    public DataStreamProcessor(String name,DataSourceStream dss, Bandera band) {
         super(name);
         this.dss = dss;
+        this.band = band;
     }
 
     public void setAbortRequested(boolean abortRequested) {
@@ -44,6 +46,7 @@ public class DataStreamProcessor extends Thread{
     @Override
     public void run(){
         while(!abortRequested){
+            synchronize();
             Integer entry=dss.getData();
             if (entry!=null){
                     System.out.println("Thread "+this.getName()+" processed:"+ entry);
@@ -51,4 +54,17 @@ public class DataStreamProcessor extends Thread{
             }            
         }
     }
+    
+    private void synchronize() {
+        synchronized(band){
+            while(!band.getBand()){
+                try {
+                    band.wait();                    
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(DataSourceStream.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+    
 }

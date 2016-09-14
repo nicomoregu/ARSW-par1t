@@ -32,12 +32,13 @@ import javax.swing.SwingUtilities;
 public class Main {
 
     public static void main(String args[]) {
-        DataSourceStream dss = new DataSourceStream();
+        Bandera band = new Bandera();
+        DataSourceStream dss = new DataSourceStream(band);
         DataStreamProcessor dsps[] = new DataStreamProcessor[30];
-
+        
         
         for (int i=0;i<dsps.length;i++){
-            dsps[i]=new DataStreamProcessor("Thread #"+i,dss);
+            dsps[i]=new DataStreamProcessor("Thread #"+i,dss,band);
         }
 
         new AbortGUI(dsps).open();

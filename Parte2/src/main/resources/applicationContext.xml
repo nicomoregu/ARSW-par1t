@@ -6,5 +6,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
 ">
-
+    <bean name="dataLoaderOne" class="edu.eci.arsw.par1t.priv.DataLoaderOne"></bean>
+    <bean name="dataLoaderTwo" class="edu.eci.arsw.par1t.priv.DataLoaderTwo"></bean>
+    <bean name="sorterThree" class="edu.eci.arsw.par1t.priv.SorterThree"></bean>
+    <bean name="sorterTwo" class="edu.eci.arsw.par1t.priv.SorterTwo"></bean>
+    
+    <bean name="dataProcessor" class="edu.eci.arsw.par1t.DataProcessor">
+        <property name="dl" ref="dataLoaderOne"/>
+        <property name="srt" ref="sorterTwo"/>
+    </bean>
+    
+    <bean name="aspect" class="edu.eci.arsw.par1t.aspects.AspectsHandler"></bean>
+    
+    <aop:config>
+        <aop:aspect ref="aspect">
+            <!-- Pointcut -->
+            <aop:pointcut expression="@annotation(edu.eci.arsw.par1t.aspects.MyAnnotation)" id="estadistica.iden"/>            
+            <aop:around pointcut-ref="estadistica.iden" method="analisis"/>
+        </aop:aspect>
+    </aop:config>
 </beans>
