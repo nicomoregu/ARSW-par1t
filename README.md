@@ -40,10 +40,12 @@ El siguiente es el modelo de clases de la herramienta de procesamiento de datos 
 
 	Una vez el aspecto tenga los datos, éste debe imprimir por pantalla:
 
+	```bash
 	Nombre del componente de carga: _____ Tiempo: _____ ms
 	Nombre del componente de ordenamiento: ____ Tiempo: _____ ms
+	```
 	
-	Donde 'nombre' el lo obtenido con el método 'getNombre' de dichos componentes.
+	Donde 'nombre' es aquel indicado mediante el método 'getNombre' de dichos componentes.
 	
 	(Nota: La lógica de (o los) aspecto(s) desarrollados deben quedar en la clase edu.eci.arsw.par1t.aspects.AspectsHandler)
 
