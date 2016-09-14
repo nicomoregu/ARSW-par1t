@@ -35,7 +35,12 @@ public class DataLoaderTwo implements DataLoader{
 		
 		return res;
 	}
-
+    
+    
+    @Override
+    public String getName() {
+        return "DataLoaderTwo";
+    }
 	
 	
 }

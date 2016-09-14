@@ -7,11 +7,11 @@ public class SorterThree implements Sorter {
 	
 	@Override
 	public void sort(int[] data) {
-		heapSort(data);		
+		misterySort(data);		
 	}
 
 	
-	private  static void heapSort(int[] array) 
+	private  static void misterySort(int[] array) 
 	{
 		/** code to create a new array that is pretty much the same but whose size is increased by 1 to accommodate 0 element */ 
 		int[] tempArray = new int[array.length + 1];
@@ -53,6 +53,11 @@ public class SorterThree implements Sorter {
 		array[i] = array[j];
 		array[j] = temp;
 	}
+
+    @Override
+    public String getName() {
+        return "SorterThree";
+    }
 }
 
 class MaxPQ 

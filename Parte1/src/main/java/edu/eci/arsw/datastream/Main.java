@@ -33,7 +33,7 @@ public class Main {
 
     public static void main(String args[]) {
         DataSourceStream dss = new DataSourceStream();
-        DataStreamProcessor dsps[] = new DataStreamProcessor[3];
+        DataStreamProcessor dsps[] = new DataStreamProcessor[30];
 
         
         for (int i=0;i<dsps.length;i++){

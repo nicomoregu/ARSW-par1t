@@ -7,22 +7,22 @@ public class SorterTwo implements Sorter{
 	
 	@Override
 	public void sort(int[] data) {
-		quickSort(data);		
+		SorterTwo.misterySort(data);		
 	}
 	
 	
-	private static void quickSort(int[] array) {
-		quickSort(array, 0, array.length - 1);
+	private static void misterySort(int[] array) {
+		misterySort(array, 0, array.length - 1);
 	}
 
-	private static void quickSort(int[] array, int lo, int hi) {
+	private static void misterySort(int[] array, int lo, int hi) {
 		// base case
 		if (hi <= lo) 
 			return;
 	    
 		int j = partition(array, lo, hi);  		  // Partition 
-	    quickSort(array, lo, j - 1);              // Sort left part a[lo ... j-1].
-	    quickSort(array, j + 1, hi);              // Sort right part a[j+1 ... hi].
+	    misterySort(array, lo, j - 1);              // Sort left part a[lo ... j-1].
+	    misterySort(array, j + 1, hi);              // Sort right part a[j+1 ... hi].
 	}
 	
 	/*
@@ -73,4 +73,9 @@ public class SorterTwo implements Sorter{
 		array[i] = array[j];
 		array[j] = temp;
 	}	
+
+    @Override
+    public String getName() {
+        return "SorterTwo";
+    }
 }

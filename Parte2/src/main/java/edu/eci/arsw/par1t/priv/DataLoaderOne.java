@@ -36,6 +36,11 @@ public class DataLoaderOne implements DataLoader{
 		return res;
 	}
 
+    @Override
+    public String getName() {
+        return "DataLoaderOne";
+    }
+
 	
 	
 }

@@ -4,4 +4,5 @@ public interface Sorter {
 
 	public void sort(int[] data);
 	
+        public String getName();
 }
