@@ -31,7 +31,7 @@ Teniendo en cuenta lo anterior:
 	
 1. Haga los ajustes necesarios para que la aplicación no use innecesariamente los recursos de CPU mientras la cola no tenga elementos. Esta solución debe igual garantizar que, en cuanto haya datos disponibles, éstos empiecen a ser procesados inmediatamente.
 2. En el archivo de respuestas indique: hay condiciones de carrera en lo planteado?. En qué clase y en qué líneas de código está la región crítica?.
-3. Haga los ajustes necesarios para que ya no se den las condiciones de carrera.
+3. Haga los ajustes necesarios para que ya no se de(n) la(s) condicion(es) de carrera.
 
 ## Parte 2
 
