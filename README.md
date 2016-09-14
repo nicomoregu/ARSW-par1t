@@ -19,7 +19,7 @@ En general, la funcionalidad es la siguiente:
 * El hilo DataSourceStream extrae contínuamente los datos provistos a través de la clase DataSource (importado como librería externa), y los encola en una cola concurrente.
 * Cada hilo DataStreamProcesor consulta el siguiente elemento disponible en dicha cola, lo 'procesa' (por ahora simplemente muestra su valor por STDOUT), e incrementa un contador común (usado para mostrar, posteriormente, el número de datos procesados).
 
-Al correr la aplicación, se puede observar que la misma usa de forma muy intensiva el procesador, dado que cuando no hay datos, realiza una ESPERA ACTIVA hasta que la cola tenga nuevamente elementos. Por otro lado, no se ha analizado si la misma presenta, en algún aspecto, condiciones de carrera que puedan llevar a comportamientos o resultados erróneos.
+Al correr la aplicación, se puede observar que la misma usa de forma muy intensiva el procesador, dado que mientras no hay datos, se queda evaluando contínuamente (ESPERA ACTIVA) hasta que la cola tenga nuevamente elementos. Por otro lado, no se ha analizado si la misma presenta, en algún aspecto, condiciones de carrera que puedan llevar a comportamientos o resultados erróneos.
 	
 Teniendo en cuenta lo anterior:
 	
@@ -72,9 +72,10 @@ $ git add .
 $ git commit -m "entrega proyecto - Juan Perez"
 ```
 
-3. Desde este mismo directorio, comprima todo con:
+3. Desde este mismo directorio, limpie el proyecto y comprímalo todo con:
 
 	```bash
+$ mvn clean	
 $ zip * -r APELLIDO.NOMBRE.zip .
 ```
 
