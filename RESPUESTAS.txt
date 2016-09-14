@@ -1,5 +1,15 @@
 
-
 Punto 1.
 
 	2.
+
+
+Punto 2. 
+
+    3.
+        
+        Pointcut:
+        
+        Advice:
+        
+        Número de posibles joinpoints:
